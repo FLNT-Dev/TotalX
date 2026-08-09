@@ -2,216 +2,408 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apple Security</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>System Security</title>
+
 <style>
 *{box-sizing:border-box}
+
 body{
     margin:0;
-    background:#050505;
-    color:white;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial;
-    overflow:hidden;
+    background:#030303;
+    color:#eee;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 }
+
 .screen{
     min-height:100vh;
     display:flex;
-    align-items:center;
     justify-content:center;
-    padding:20px;
+    align-items:center;
+    padding:18px;
 }
+
 .box{
-    width:650px;
-    max-width:95%;
-    background:#111;
+    width:720px;
+    max-width:96%;
+    background:#0d0d0d;
     border:1px solid #333;
     border-radius:18px;
-    padding:30px;
-    box-shadow:0 0 50px rgba(255,0,0,.18);
+    padding:25px;
+    box-shadow:0 0 70px rgba(255,0,0,.16);
 }
+
 .header{
     display:flex;
     align-items:center;
-    gap:15px;
-    margin-bottom:25px;
+    gap:14px;
+    margin-bottom:22px;
 }
-.apple{
-    font-size:42px;
-}
-h1{
+
+.logo{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background:#292929;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     font-size:25px;
+}
+
+h1{
     margin:0;
+    font-size:24px;
 }
+
 .sub{
-    color:#888;
-    margin-top:5px;
+    color:#777;
+    margin-top:4px;
+    font-size:13px;
 }
+
 .info{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin-bottom:25px;
+    gap:8px;
 }
+
 .item{
-    background:#1b1b1b;
-    border-radius:9px;
-    padding:12px;
+    background:#171717;
+    border:1px solid #242424;
+    border-radius:8px;
+    padding:11px;
 }
+
 .label{
-    color:#777;
-    font-size:12px;
+    color:#666;
+    font-size:10px;
+    letter-spacing:.7px;
 }
+
 .value{
-    margin-top:4px;
-    font-size:15px;
+    margin-top:5px;
+    font-size:14px;
 }
+
+.red{
+    color:#ff453a;
+}
+
+.orange{
+    color:#ff9f0a;
+}
+
+.scan{
+    margin-top:22px;
+}
+
+.scan-title{
+    display:flex;
+    justify-content:space-between;
+    color:#aaa;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
 .progress-bg{
-    height:10px;
+    height:9px;
     background:#292929;
     border-radius:20px;
     overflow:hidden;
 }
+
 .progress{
     height:100%;
     width:0%;
     background:#ff3b30;
-    transition:.25s;
+    transition:.2s;
 }
+
 .percent{
-    color:#888;
-    margin-top:8px;
-    font-size:13px;
+    color:#666;
+    font-size:12px;
+    margin-top:6px;
 }
+
+.logs{
+    margin-top:18px;
+    height:135px;
+    overflow:hidden;
+    background:#070707;
+    border:1px solid #222;
+    border-radius:8px;
+    padding:12px;
+    font-family:monospace;
+    font-size:11px;
+    color:#777;
+}
+
+.log{
+    margin:4px 0;
+}
+
+.danger{
+    color:#ff453a;
+}
+
 .warning{
     display:none;
-    margin-top:25px;
-    padding:20px;
-    background:#300d0d;
-    border:1px solid #ff3b30;
-    border-radius:12px;
+    margin-top:20px;
+    padding:18px;
+    border:1px solid #ff453a;
+    background:#270909;
+    border-radius:10px;
 }
+
 .warning h2{
     color:#ff453a;
-    margin-top:0;
+    margin:0 0 12px;
 }
+
 button{
     width:100%;
+    margin-top:14px;
     padding:14px;
     border:0;
     border-radius:9px;
     background:#ff3b30;
     color:white;
-    font-size:16px;
+    font-size:15px;
     font-weight:bold;
     cursor:pointer;
 }
+
 .joke{
     display:none;
     text-align:center;
+    padding:20px;
 }
+
 .joke h1{
-    font-size:60px;
+    font-size:55px;
 }
+
 .green{
     color:#30d158;
 }
+
+.footer{
+    text-align:center;
+    margin-top:22px;
+    color:#444;
+    font-size:10px;
+    letter-spacing:2px;
+    font-family:monospace;
+}
 </style>
 </head>
+
 <body>
+
 <div class="screen">
-<div class="box" id="box">
+<div class="box">
+
 <div class="header">
-<div class="apple"></div>
+<div class="logo">⚠️</div>
 <div>
-<h1>Apple Security</h1>
-<div class="sub">Cihaz güvenlik merkezi</div>
+<h1>System Security</h1>
+<div class="sub">Device integrity & threat detection</div>
 </div>
 </div>
+
 <div class="info">
+
 <div class="item">
-<div class="label">CİHAZ</div>
+<div class="label">DEVICE</div>
 <div class="value">iPhone 13</div>
 </div>
+
 <div class="item">
-<div class="label">KONUM</div>
+<div class="label">LOCATION</div>
 <div class="value">İstanbul / Türkiye</div>
 </div>
+
 <div class="item">
-<div class="label">IP ADRESİ</div>
+<div class="label">IP ADDRESS</div>
 <div class="value">192.168.284.332</div>
 </div>
+
 <div class="item">
-<div class="label">AĞ</div>
+<div class="label">NETWORK</div>
 <div class="value">TURKCELL_5G</div>
 </div>
+
 <div class="item">
-<div class="label">SİSTEM</div>
+<div class="label">SYSTEM</div>
 <div class="value">iOS 18.7.7</div>
 </div>
+
 <div class="item">
-<div class="label">PİL</div>
-<div class="value">13%</div>
+<div class="label">BATTERY</div>
+<div class="value orange">UNKNOWN</div>
 </div>
+
 <div class="item">
-<div class="label">CİHAZ ID</div>
-<div class="value">IOS-13-IST-739241</div>
+<div class="label">DEVICE IDENTIFIER</div>
+<div class="value">IOS13-IST-739241</div>
 </div>
+
 <div class="item">
-<div class="label">SON ETKİNLİK</div>
-<div class="value">03:57:42</div>
+<div class="label">SECURITY STATUS</div>
+<div class="value red">AT RISK</div>
 </div>
+
 </div>
-<p id="status">Sistem güvenlik açısından taranıyor...</p>
+
+<div class="scan">
+
+<div class="scan-title">
+<span id="status">Kernel integrity kontrol ediliyor...</span>
+<span id="percentText">0%</span>
+</div>
+
 <div class="progress-bg">
 <div class="progress" id="progress"></div>
 </div>
-<div class="percent" id="percent">0%</div>
+
+<div class="percent">
+Security scan ID: SCN-739241
+</div>
+
+</div>
+
+<div class="logs" id="logs">
+<div class="log">[SYSTEM] Initializing security scanner...</div>
+<div class="log">[NETWORK] Checking network integrity...</div>
+<div class="log">[DEVICE] Reading system configuration...</div>
+</div>
+
 <div class="warning" id="warning">
-<h2>⚠️ 3 KRİTİK TEHDİT BULUNDU</h2>
-<p>Şüpheli sistem etkinliği tespit edildi.</p>
-<p>• iOS.System.Injector</p>
+
+<h2>⚠️ KRİTİK GÜVENLİK UYARISI</h2>
+
+<p><b>3 şüpheli işlem tespit edildi.</b></p>
+
 <p>• Unknown.Remote.Connection</p>
+<p>• iOS.System.Injector</p>
 <p>• SystemData.Exploit</p>
-<p><b>Fotoğraflar:</b> Tarama bekliyor</p>
-<p><b>Mesajlar:</b> Tarama bekliyor</p>
-<p><b>iCloud:</b> Bağlantı kontrol ediliyor</p>
-<br>
-<button onclick="joke()">TEHDİTLERİ KALDIR</button>
-</div>
-<div class="joke" id="joke">
-<h1>😂</h1>
-<h1>ŞAKA YAPTIM</h1>
-<p class="green">
-Cihazınızda hiçbir şey olmadı.
+
+<p>
+Fotoğraf dizini: <span class="red">ŞÜPHELİ</span><br>
+Mesaj veritabanı: <span class="red">KONTROL GEREKLİ</span><br>
+iCloud bağlantısı: <span class="orange">DOĞRULAMA GEREKLİ</span>
 </p>
-<p>Arkadaşın sağlam trollendi. 💀</p>
-<button onclick="location.reload()">
-TEKRAR TARA
-</button>
+
+<p>
+Threat level:
+<b class="red">CRITICAL</b>
+</p>
+
+<button onclick="revealJoke()">THREATS DETECTED — REMOVE</button>
+
+</div>
+
+<div class="joke" id="joke">
+
+<h1>😂</h1>
+
+<h1>ŞAKA YAPTIM!</h1>
+
+<p class="green">
+Cihazında hiçbir şey olmadı.
+</p>
+
+<p>
+Bu sayfadaki tüm bilgiler ve tehditler tamamen sahteydi. 💀
+</p>
+
+<button onclick="location.reload()">TEKRAR TARA</button>
+
+</div>
+
+<div class="footer">
+FLNT // SECURITY SYSTEM
+</div>
+
 </div>
 </div>
-</div>
+
 <script>
+
 let p=0;
-let scan=setInterval(()=>{
-    p += Math.floor(Math.random()*5)+1;
+
+const fakeLogs=[
+"[SYSTEM] Scanning kernel memory...",
+"[NETWORK] Checking active connections...",
+"[SECURITY] Analyzing system processes...",
+"[SYSTEM] Checking protected directories...",
+"[WARNING] Unknown process detected...",
+"[NETWORK] Suspicious connection found...",
+"[SECURITY] Verifying encrypted storage...",
+"[SYSTEM] Checking application permissions...",
+"[WARNING] Integrity verification failed...",
+"[SECURITY] Deep scan initiated...",
+"[SYSTEM] Analyzing system containers...",
+"[NETWORK] Remote endpoint verification...",
+"[WARNING] Abnormal activity detected..."
+];
+
+let logIndex=0;
+
+const logBox=document.getElementById("logs");
+
+const logTimer=setInterval(()=>{
+
+    const line=document.createElement("div");
+    line.className="log";
+
+    line.textContent=fakeLogs[logIndex % fakeLogs.length];
+
+    if(line.textContent.includes("WARNING")){
+        line.classList.add("danger");
+    }
+
+    logBox.appendChild(line);
+    logBox.scrollTop=logBox.scrollHeight;
+
+    logIndex++;
+
+},650);
+
+
+const scan=setInterval(()=>{
+
+    p += Math.floor(Math.random()*4)+1;
+
     if(p>=100){
+
         p=100;
         clearInterval(scan);
-        document.getElementById("status").innerText=
-        "Tarama tamamlandı — güvenlik tehdidi tespit edildi.";
+        clearInterval(logTimer);
+
+        document.getElementById("status").textContent=
+        "Tarama tamamlandı — kritik tehdit bulundu.";
+
         document.getElementById("warning").style.display="block";
     }
+
     document.getElementById("progress").style.width=p+"%";
-    document.getElementById("percent").innerText=p+"%";
-},250);
-function joke(){
+    document.getElementById("percentText").textContent=p+"%";
+
+},220);
+
+
+function revealJoke(){
+
     document.getElementById("warning").style.display="none";
-    document.getElementById("status").style.display="none";
-    document.querySelector(".progress-bg").style.display="none";
-    document.getElementById("percent").style.display="none";
+    document.querySelector(".scan").style.display="none";
+    document.getElementById("logs").style.display="none";
     document.getElementById("joke").style.display="block";
+
 }
+
 </script>
+
 </body>
 </html>
